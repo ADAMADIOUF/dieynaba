@@ -13,7 +13,7 @@ import i from '../assets/tissue.png'
 
 const Options = () => {
   return (
-    <div className='nos-options-container section-center'>
+    <div className='section-center'>
       <h2>Nos Options</h2>
       <div className='container-options'>
         <div className='option'>

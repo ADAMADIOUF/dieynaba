@@ -36,24 +36,24 @@ const Login = () => {
 
   return (
     <div className='section-center'>
-      <h1>Sign In</h1>
+      <h1>Connexion</h1>
       <form onSubmit={submitHandler}>
         <div className='my-3'>
-          <label htmlFor='email'>Email Address</label>
+          <label htmlFor='email'>Adresse e-mail</label>
           <input
             type='email'
             id='email'
-            placeholder='enter email'
+            placeholder="entrer l\'adresse e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className='my-3'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Mot de passe</label>
           <input
             type='password'
             id='password'
-            placeholder='enter password'
+            placeholder='entrer le mot de passe'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -63,14 +63,14 @@ const Login = () => {
           className='btn btn-primary mt-2'
           disabled={isLoading}
         >
-          Sign In
+          Se connecter
         </button>
         {isLoading && <Loading />}
       </form>
       <div className='py-3'>
-        <span>New Customer? </span>
+        <span>Nouveau client ? </span>
         <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          Register
+          S'inscrire
         </Link>
       </div>
     </div>

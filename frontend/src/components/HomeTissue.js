@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
 import Loading from '../components/Loading'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { addToCart } from '../slices/cartSlice'
 import { useDispatch } from 'react-redux'
 import { FaShoppingCart } from 'react-icons/fa'
@@ -13,6 +13,7 @@ import f from '../assets/t1.png'
 import Error from '../components/Error'
 
 const HomeTissue = () => {
+ 
   const sliderRef = useRef(null)
   const sliderWrapperRef = useRef(null)
   const [sliderHovered, setSliderHovered] = useState(false)

@@ -13,6 +13,7 @@ import f from '../assets/b.png'
 import Error from '../components/Error'
 
 const HomeBag = () => {
+
   const sliderRef = useRef(null)
   const sliderWrapperRef = useRef(null)
   const [sliderHovered, setSliderHovered] = useState(false)

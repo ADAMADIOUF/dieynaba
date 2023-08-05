@@ -13,6 +13,7 @@ import f from '../assets/f.png'
 import Error from '../components/Error'
 
 const HomeTableWare = () => {
+
   const sliderRef = useRef(null)
   const sliderWrapperRef = useRef(null)
   const [sliderHovered, setSliderHovered] = useState(false)

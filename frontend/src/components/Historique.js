@@ -2,7 +2,7 @@ import React from 'react'
 
 const Historique = () => {
   return (
-    <div className='historique-container'>
+    <div className=' section-center'>
       <h2>Notre Histoire</h2>
       <p>
         Bienvenue sur notre site web ! Depuis notre création il y a plusieurs

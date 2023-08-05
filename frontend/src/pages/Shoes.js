@@ -48,6 +48,8 @@ const Shoes = () => {
   const shoes = products.filter((product) => product.category === 'shoes')
 
   return (
+  
+      
     <div className='tableware section-center'>
       <article className='first-categories-slider-products'>
         <div className='table-products'>
@@ -93,6 +95,7 @@ const Shoes = () => {
         <QuickView product={selectedProduct} onClose={handleCloseQuickView} />
       )}
     </div>
+   
   )
 }
 

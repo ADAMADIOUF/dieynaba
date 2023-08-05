@@ -45,7 +45,7 @@ const Commander = () => {
   }
 
   return (
-    <div className='commander-container'>
+    <div className=' section-center'>
       <h2>Passer une commande</h2>
       <form onSubmit={handleSubmit}>
         <div className='form-group'>

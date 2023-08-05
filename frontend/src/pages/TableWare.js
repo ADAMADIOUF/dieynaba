@@ -50,6 +50,8 @@ const TableWare = () => {
   )
 
   return (
+    <>
+     
     <div className='tableware section-center'>
       
         <article className='first-categories-slider-products'>
@@ -96,6 +98,7 @@ const TableWare = () => {
         <QuickView product={selectedProduct} onClose={handleCloseQuickView} />
       )}
     </div>
+    </>
   )
 }
 

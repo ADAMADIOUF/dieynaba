@@ -1,26 +1,25 @@
 import React from 'react'
+import ProductSlider from './ProductSlider'
 import FirstProducts from '../pages/FirstProducts'
-import Slider from './Slider'
-import HomeTableWare from './HomeTableWare'
-import HomeTissue from './HomeTissue'
-import FirstCategories from './FirstCategories'
-import HomeBag from './HomeBag'
-import HomeWoman from './HomeWoman'
-import HomeShoes from './HomeShoes'
-import SecondCategories from './SecondCategories'
-
+import HomeTissue from '../components/HomeTissue'
+import HomeTableWare from '../components/HomeTableWare'
+import HomeWoman from '../components/HomeWoman'
+import HomeBag from '../components/HomeBag'
+import HomeShoes from '../components/HomeShoes'
+import FirstCategories from "../components/FirstCategories"
+import SecondCategories from "../components/SecondCategories"
 const Home = () => {
   return (
     <div>
-      <Slider/>
-     <FirstProducts/>
-     <HomeTableWare/>
-     <FirstCategories/>
-     <HomeTissue/>
-     <HomeBag/>
-     <HomeWoman/>
-     <SecondCategories/>
-     <HomeShoes/>
+      <ProductSlider />
+      <FirstProducts />
+      <HomeTableWare />
+      <FirstCategories />
+      <HomeTissue />
+      <HomeBag/>
+      <HomeWoman/>
+      <SecondCategories/>
+      <HomeShoes/>
     </div>
   )
 }

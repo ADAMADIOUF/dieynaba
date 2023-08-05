@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRegisterMutation } from '../slices/usersApiSlice'
@@ -30,7 +29,7 @@ const Register = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match')
+      toast.error('Les mots de passe ne correspondent pas')
       return
     } else {
       try {
@@ -45,44 +44,44 @@ const Register = () => {
 
   return (
     <div className='register-screen section-center'>
-      <h1>Sign Up</h1>
+      <h1>S'inscrire</h1>
       <form onSubmit={submitHandler}>
         <div className='form-group'>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='name'>Nom</label>
           <input
             type='text'
             id='name'
-            placeholder='Enter name'
+            placeholder='Entrer le nom'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='email'>Email Address</label>
+          <label htmlFor='email'>Adresse e-mail</label>
           <input
             type='email'
             id='email'
-            placeholder='Enter email'
+            placeholder="Entrer l\'adresse e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Mot de passe</label>
           <input
             type='password'
             id='password'
-            placeholder='Enter password'
+            placeholder='Entrer le mot de passe'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className='form-group'>
-          <label htmlFor='confirmPassword'>Confirm Password</label>
+          <label htmlFor='confirmPassword'>Confirmer le mot de passe</label>
           <input
             type='password'
             id='confirmPassword'
-            placeholder='Confirm password'
+            placeholder='Confirmer le mot de passe'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
@@ -93,15 +92,15 @@ const Register = () => {
           className='mt-2'
           disabled={isLoading}
         >
-          Register
+          S'inscrire
         </button>
         {isLoading && <Loading />}
       </form>
       <div className='py-3'>
         <div>
-          Already have an account?{' '}
+          Déjà un compte?{' '}
           <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-            Login
+            Se connecter
           </Link>
         </div>
       </div>

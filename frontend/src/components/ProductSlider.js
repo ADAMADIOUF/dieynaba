@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-const Slider = () => {
+
+const ProductSlider = () => {
   const [activeSlide, setActiveSlide] = useState(0)
   const slides = [
     {
@@ -63,4 +64,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default ProductSlider

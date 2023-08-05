@@ -4,16 +4,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../slices/authSlice'
 import { useLogoutMutation } from '../slices/usersApiSlice'
-
+import logo from "../assets/logo.png"
 const Navbar = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { cartItems } = useSelector((state) => state.cart)
   const [showCategories, setShowCategories] = useState(false)
+
   const toggleCategories = () => {
-    setShowCategories(!showCategories)
+    setShowCategories((prevShowCategories) => !prevShowCategories)
   }
 
+  const closeMenu = () => {
+    setShowCategories(false)
+  }
   const { userInfo } = useSelector((state) => state.auth)
   const [logoutApiCall] = useLogoutMutation()
 
@@ -45,9 +49,11 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='logo'>
-        <Link to='/'>Logo</Link> {/* Make the Logo text a link */}
+        <Link to='/'>
+          <img src={logo} alt='' className='logo' />
+        </Link>
       </div>
-      <div className='search'>Search</div>
+
       <div className='cart'>
         <Link to='/cart'>
           <FaShoppingCart /> Panier
@@ -63,41 +69,41 @@ const Navbar = () => {
           <li>
             VAISSELLE
             <ul className='sub-categories'>
-              <Link to={`/tableware`}>
-                <li>Vaisselle</li>
-              </Link>
+              <li onClick={closeMenu}>
+                <Link to={`/tableware`}>Vaisselle</Link>
+              </li>
             </ul>
           </li>
           <li>
             TISSUE
             <ul className='sub-categories'>
-              <Link to={`/tissue`}>
-                <li>Tissue</li>
-              </Link>
+              <li onClick={closeMenu}>
+                <Link to={`/tissue`}>Tissue</Link>
+              </li>
             </ul>
           </li>
           <li>
             VÉTEMENTS
             <ul className='sub-categories'>
-              <Link to={`/woman`}>
-                <li>vêtements</li>
-              </Link>
+              <li onClick={closeMenu}>
+                <Link to={`/woman`}>Vêtements</Link>
+              </li>
             </ul>
           </li>
           <li>
             SAC POUR LES FILLES
             <ul className='sub-categories'>
-              <Link to={`/bag`}>
-                <li>Sac pour filles</li>
-              </Link>
+              <li onClick={closeMenu}>
+                <Link to={`/bag`}>Sac pour filles</Link>
+              </li>
             </ul>
           </li>
           <li>
             CHAUSSURES
             <ul className='sub-categories'>
-              <Link to={`/shoes`}>
-                <li>Chaussures</li>
-              </Link>
+              <li onClick={closeMenu}>
+                <Link to={`/shoes`}>Chaussures</Link>
+              </li>
             </ul>
           </li>
           {/* Add more categories here */}
@@ -108,6 +114,7 @@ const Navbar = () => {
         <div className='line'></div>
         <div className='line'></div>
       </div>
+
       <div className='nav-links'>
         <Link to='/'>Accueil</Link>
         <Link to='/options'>Nos options</Link>
@@ -119,13 +126,12 @@ const Navbar = () => {
           <div className='nav-dropdown'>
             <span className='nav-username'>{userInfo.name}</span>
             <div className='nav-dropdown-content'>
-              <Link to='/profile'>Profile</Link>
-              <button onClick={logoutHandler}>Logout</button>
+              <button onClick={logoutHandler}>déconnexion</button>
             </div>
           </div>
         ) : (
           <Link to='/login' className='nav-link'>
-            <FaUser /> Sign In
+            <FaUser /> YAYE TENNING
           </Link>
         )}
       </div>

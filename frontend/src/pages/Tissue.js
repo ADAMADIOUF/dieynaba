@@ -50,51 +50,54 @@ const Tissue = () => {
   )
 
   return (
-    <div className='tableware section-center'>
-      <article className='first-categories-slider-products'>
-        <div className='table-products'>
-          {tissue.map((product) => {
-            const { image, name, price, _id } = product
+    <>
+     
+      <div className='tableware section-center'>
+        <article className='first-categories-slider-products'>
+          <div className='table-products'>
+            {tissue.map((product) => {
+              const { image, name, price, _id } = product
 
-            return (
-              <div key={_id} className='products-details'>
-                <Link to={`/product/${_id}`}>
-                  <img src={image} alt='' className='products-img-table' />
-                </Link>
-                <div className='view-cart'>
-                  <span onClick={() => handleLikeToggle(_id)}>
-                    {likedProducts[_id] ? (
-                      <BsFillHeartFill style={{ color: 'red' }} />
-                    ) : (
-                      <BsFillHeartFill />
-                    )}
-                  </span>
+              return (
+                <div key={_id} className='products-details'>
+                  <Link to={`/product/${_id}`}>
+                    <img src={image} alt='' className='products-img-table' />
+                  </Link>
+                  <div className='view-cart'>
+                    <span onClick={() => handleLikeToggle(_id)}>
+                      {likedProducts[_id] ? (
+                        <BsFillHeartFill style={{ color: 'red' }} />
+                      ) : (
+                        <BsFillHeartFill />
+                      )}
+                    </span>
 
-                  <span onClick={() => handleQuickView(product)}>
-                    <BsFillBasketFill />
-                  </span>
+                    <span onClick={() => handleQuickView(product)}>
+                      <BsFillBasketFill />
+                    </span>
+                  </div>
+                  <h3
+                    className='shopping-cart'
+                    onClick={() => addToCartHandler(product, 1)}
+                  >
+                    <span className='cart-product'>
+                      <FaShoppingCart />
+                      <span> ajouter au panier</span>
+                    </span>
+                  </h3>
+                  <h3>{name}</h3>
+                  <p>{price}CFA</p>
                 </div>
-                <h3
-                  className='shopping-cart'
-                  onClick={() => addToCartHandler(product, 1)}
-                >
-                  <span className='cart-product'>
-                    <FaShoppingCart />
-                    <span> ajouter au panier</span>
-                  </span>
-                </h3>
-                <h3>{name}</h3>
-                <p>{price}CFA</p>
-              </div>
-            )
-          })}
-        </div>
-      </article>
+              )
+            })}
+          </div>
+        </article>
 
-      {selectedProduct && (
-        <QuickView product={selectedProduct} onClose={handleCloseQuickView} />
-      )}
-    </div>
+        {selectedProduct && (
+          <QuickView product={selectedProduct} onClose={handleCloseQuickView} />
+        )}
+      </div>
+    </>
   )
 }
 
