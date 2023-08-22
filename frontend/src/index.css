@@ -428,7 +428,7 @@ p {
 /* SingleProduct */
 
 .single-product{
-  margin-top: 15rem;
+  margin-top: 20rem;
 }
 .container-single-product {
   display: flex;
@@ -563,9 +563,7 @@ p {
   .container-single-product {
     flex-direction: row;
   }
-.single-product{
-  margin-top: 10rem;
-}
+
   .single-img {
     flex: 1;
   }
